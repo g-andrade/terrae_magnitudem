@@ -12,19 +12,24 @@
         <script src="code.js"></script>
     </head>
     <body>
-        <h3>Have you ever wondered how large the Earth can possibly be?</h3>
-        <h3><b>NOT ANYMORE</b></h3>
-        <h4>Let's estimate its diameter in real time.</h4>
-        <ul>
-            <li>
-                <span class="property_name">Estimate:</span>
-                <span class="property_value" id="estimate"></span>
-            </li>
-            <li>
-                <span class="property_name">Real value:</span>
-                <span class="property_value" id="real_value">12,742 km</span>
-            </li>
-        </ul>
-        <h4>We do this using the angle between the locations of your device and this server, plus the time data takes to travel between both.</h4>
+        <div id="the_thing">
+            <h3>Ever wondered how large the Earth can possibly be?</h3>
+            <h3><b>NOT ANYMORE</b></h3>
+            Let's estimate its diameter in real time.
+            <ul class="properties">
+                <li>
+                    <span class="property_name">Estimate:</span>
+                    <span class="property_value" id="estimate"></span>
+                </li>
+                <li>
+                    <span class="property_name">Real value:</span>
+                    <span class="property_value" id="real_value">12,742 km</span>
+                </li>
+            </ul>
+            We do this using the <b>angle between</b> the (approximate) <b>locations</b> of your device and this server,
+            plus the <b>time data takes to travel</b> between both,
+            <i>plus</i> an arbitrary <b>multiplier of the speed of light</b> that intends to account for
+            ordinary propagation delays, buffers, level of indirection in routes, and so on.
+        </div>
     </body>
 </html>
