@@ -30,7 +30,7 @@ defmodule TerraeMagnitudem.Measurements do
   end
 
   def bucket_for_peer(peer_ip_address) do
-    :erlang.phash2(peer_ip_address, @number_of_buckets)
+    :erlang.phash2(peer_ip_address, @number_of_buckets) + 1
   end
 
   def report_sample(bucket, angle, rtt) do
