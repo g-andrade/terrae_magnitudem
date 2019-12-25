@@ -7,7 +7,7 @@ defmodule TerraeMagnitudem.Measurements do
 
   @server __MODULE__
   @samples_table TerraeMagnitudem.Measurements.Samples
-  @number_of_buckets 500
+  @number_of_buckets 1
 
   @stats_table TerraeMagnitudem.Measurements.Stats
   @stats_refresh_interval 1_000
@@ -40,9 +40,9 @@ defmodule TerraeMagnitudem.Measurements do
     angles_per_second = angle / rtt_in_seconds
     updated_samples =
       case prev_samples do
-        [a,b,c,d,_] ->
-          [angles_per_second,a,b,c,d]
-        _ when length(prev_samples) < 5 ->
+        _ when length(prev_samples) == 15 ->
+          [angles_per_second | :lists.sublist(prev_samples, 9)]
+        _ when length(prev_samples) < 15 ->
           [angles_per_second|prev_samples]
       end
     :ets.insert(@samples_table, {bucket, updated_samples})

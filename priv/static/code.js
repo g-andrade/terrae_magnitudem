@@ -8,7 +8,7 @@ function setupConnection() {
     let socket_endpoint = window.location.hostname + (window.location.port == "" ? "" : ":" + window.location.port);
     let socket_url = `${socket_protocol}\/\/${socket_endpoint}/api/v1/measurement-socket`
     let socket = new WebSocket(socket_url)
-    
+
     socket.onopen = function(e) {
         console.info("Connection established")
     };
@@ -16,7 +16,7 @@ function setupConnection() {
     socket.onclose = function(event) {
         if (event.wasClean) {
             console.info(`Connection closed cleanly, code=${event.code} reason=${event.reason}`)
-        } 
+        }
         else {
             console.error(`Connection died, code=${event.code}, reason=${event.reason}`)
         }
@@ -37,7 +37,7 @@ function refreshStats() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let stats = JSON.parse(xhr.responseText);
             updateVisualStats(stats);
-            scheduleStatsRefresh(5000)
+            scheduleStatsRefresh(3000)
         }
     };
     xhr.send();
