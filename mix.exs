@@ -26,6 +26,7 @@ defmodule TerraeMagnitudem.MixProject do
       #{:ex2ms, "~> 1.6"},
       {:jason, "~> 1.1.2"},
       {:locus, "~> 1.8"},
+      {:logger_file_backend, "0.0.11"},
       {:recon, "~> 2.5"},
       {:sbroker, "~> 1.0"},
       {:statistics, "~> 0.6"}

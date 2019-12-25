@@ -29,10 +29,14 @@ use Mix.Config
 #
 #     import_config "#{Mix.env()}.exs"
 
-config :logger, :console,
-  format: "\n$date $time $metadata[$level] $levelpad$message\n",
-  metadata: [:module, :line, :pid],
-  colors: [enabled: true]
+config :logger,
+  backends: [{LoggerFileBackend, :debug_log}]
+
+config :logger, :debug_log,
+  path: "debugLog.log",
+  level: :debug,
+  format: "$date $time $metadata[$level] $message\n",
+  metadata: [:module, :line, :pid]
 
 config :terrae_magnitudem,
   #server_location: {38.724106, -9.134557} # Lisbon
