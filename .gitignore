@@ -24,3 +24,6 @@ terrae_magnitudem-*.tar
 
 # Ignore Vim swap files
 *.swp
+
+# Ignore log files
+*.log
